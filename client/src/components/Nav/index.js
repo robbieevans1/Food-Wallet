@@ -24,12 +24,12 @@ function Nav() {
     } else {
       return (
         <ul className="flex-row">
-          <li className="mx-1">
+          <li className="mx-1 pt-6 pl-3">
             <Link to="/signup">
               Signup
             </Link>
           </li>
-          <li className="mx-1">
+          <li className="mx-1 pt-6">
             <Link to="/login">
               Login
             </Link>
@@ -44,7 +44,7 @@ function Nav() {
       <h1>
         <Link to="/">
           <span role="img" aria-label="shopping bag">🛍️</span>
-          -Shop-Shop
+          Food Wallet
         </Link>
       </h1>
 
