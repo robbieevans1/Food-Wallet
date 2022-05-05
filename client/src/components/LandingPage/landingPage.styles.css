@@ -2,9 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+.landing {
   background-image: url('./img/welcomePageBg.jpg');
   background-size: cover;
   background-position: top center;
+  width: 100%;
   
 }

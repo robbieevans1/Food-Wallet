@@ -3,7 +3,7 @@ import './landingPage.styles.css'
 
 const LandingPage = () => {
 	return (
-		<div className="min-h-screen flex flex-col text-white">
+		<div className="min-h-screen flex flex-col text-white landing">
 			<main className="container mx-auto px-6 pt-16 flex-1 text-center">
 				<h2 className="text-2xl md:text-4xl lg:text-6xl uppercase">
 					Welcome To
