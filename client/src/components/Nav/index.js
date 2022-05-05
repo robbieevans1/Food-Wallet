@@ -24,7 +24,7 @@ function Nav() {
               Merch
             </Link>
           </li>
-          <li className="mx-1 pt-6">
+          <li className="mx-1 pt-6 pl-3">
             {/* this is not using the Link component to logout or user and then refresh the application to the start */}
             <a href="/" onClick={() => Auth.logout()}>
               Logout
