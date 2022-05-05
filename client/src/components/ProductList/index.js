@@ -64,6 +64,7 @@ function ProductList() {
       )}
       {loading ? <img src={spinner} alt="loading" /> : null}
     </div>
+    
   );
 }
 
