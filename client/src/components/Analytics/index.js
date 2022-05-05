@@ -22,7 +22,7 @@ const Analytics = () => {
         <p className="mb-4 md:mb-0 md:text-xl">Made with 💖 by Robbie </p>
 
         <div className="flex -mx-6">
-          <a href="#" className=" mx-3 hover:opacity-80 duration-150">
+          <a href="/about" className=" mx-3 hover:opacity-80 duration-150">
             About us
           </a>{" "}
           |
