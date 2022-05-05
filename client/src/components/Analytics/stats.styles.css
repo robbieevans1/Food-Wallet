@@ -1,7 +1,5 @@
-
-
-.landing {
-  background-image: url('./img/welcomePageBg.jpg');
+.loggedIn {
+  background-image: url('./img/blackGreen.jpg');
   background-size: cover;
   background-position: top center;
   width: 100%;
