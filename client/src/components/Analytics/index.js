@@ -22,7 +22,7 @@ const Analytics = () => {
 	let foodUrl = `https://api.fitbit.com/1/user/-/foods/log/caloriesIn/date/${today}/1d.json`;
 
   function jsonFromResponse(response) {
-    console.log(res);
+    console.log(response);
     if (!response.ok) {
       throw Error("Error");
     }
@@ -39,14 +39,41 @@ const Analytics = () => {
 		Promise.all([
 			fetch(activityUrl, getWithAuth).then(jsonFromResponse),
 			fetch(foodUrl, getWithAuth).then(jsonFromResponse),
-		])
-			.then((res) => res.json())
-			.then((json) => {
-				setData(json);
-				setLoading(false);
-			});
-	}, []);
-	console.log(data);
+		]).then(([data, foodData]) => {
+      console.log({data, foodData})
+
+      	// add calories out data to html
+	let caloriesBurned = data.summary.caloriesOut;
+	
+
+	// add calories out foodData to html
+	let caloriesEaten = foodData["foods-log-caloriesIn"][0].value
+	
+
+	// add calorie deficit desired to html
+	let calorieDeficit = 500
+	
+
+	// adds bmr data to html
+	const bmr = data.summary.caloriesBMR
+	
+
+	// add floor count data to html
+	const floorCount = data.summary.floors
+	
+
+	// add step count data to html
+	const stepCount = data.summary.steps
+	
+
+	// add resting heart rate data to html
+	const restingHeartRate = data.summary.restingHeartRate
+	
+	// add calories available to html
+	const caloriesAvailable = caloriesBurned - caloriesEaten - calorieDeficit;
+    })
+			
+  })
 	return (
 		<div className="min-h-screen flex flex-col text-white loggedIn">
 			<main className="container mx-auto px-6 pt-16 flex-1 text-center">
@@ -58,14 +85,14 @@ const Analytics = () => {
 				</h1>
 				<div className="text-lg md:text-2xl lg:3xl py-2 md:py-4 md:px-10 lg:py-6 lg:px-12 bg-green-900 bg-opacity-40 w-fit mx-auto mb-8 rounded-full">
 					<ul>
-            <li>Calories Burned: 2500{}</li>
-            <li>Calories Eaten: 2000{}</li>
-            <li>Desired Daily Deficit: {500}</li>
-            <li><span className="text-yellow-400">Calories Available Right Now:</span> 0{}</li>
-            <li>BMR: 1600{}</li>
-            <li>Floor Count: 17{}</li>
-            <li>Step Count: 6572{}</li>
-            <li>Resting Heart Rate: 69{}</li>
+            <li>Calories Burned: {caloriesBurned}</li>
+            <li>Calories Eaten: {caloriesEaten}</li>
+            <li>Desired Daily Deficit: {calorieDeficit}</li>
+            <li><span className="text-yellow-400">Calories in your wallet:</span> {caloriesAvailable}</li>
+            <li>BMR: {bmr}</li>
+            <li>Floor Count: {floorCount}</li>
+            <li>Step Count: {stepCount}</li>
+            <li>Resting Heart Rate: {restingHeartRate}</li>
             
             
           </ul>

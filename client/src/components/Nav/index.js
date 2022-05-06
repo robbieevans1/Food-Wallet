@@ -59,7 +59,7 @@ function Nav() {
         </Link>
       </h1>
 
-      <nav>
+      <nav className="">
         {showNavigation()}
       </nav>
     </header>
