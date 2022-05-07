@@ -77,9 +77,9 @@ function Signup(props) {
           />
         </div>
         <div className="flex-row space-between my-2">
-          <label htmlFor="tkn">Fitbit Token:</label>
+          <label htmlFor="tkn">Fitbit Token: <span className='text-green-900'><a href='/faq'>Learn More</a></span></label>
           <input
-            placeholder="********************"
+            placeholder="Optional"
             name="token"
             type="token"
             id="tkn"

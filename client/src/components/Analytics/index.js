@@ -44,6 +44,7 @@ const Analytics = () => {
 				console.log({ fitData, foodData });
 				setData({ fitData, foodData });
 				setLoading({ fitData, foodData });
+				console.log(data.fitData?.summary?.caloriesOut)
 			})
 			.catch((err) => {
 				console.log("response error", err);
