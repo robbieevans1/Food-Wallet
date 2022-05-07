@@ -76,6 +76,16 @@ function Signup(props) {
             onChange={handleChange}
           />
         </div>
+        <div className="flex-row space-between my-2">
+          <label htmlFor="tkn">Fitbit Token:</label>
+          <input
+            placeholder="********************"
+            name="token"
+            type="token"
+            id="tkn"
+            // onChange={handleChange}
+          />
+        </div>
         <div className="flex-row flex-end">
           <button className='bg-green-900 text-white' type="submit">Submit</button>
         </div>

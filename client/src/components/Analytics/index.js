@@ -2,6 +2,7 @@ import React from "react";
 import "./stats.styles.css";
 import { useEffect, useState } from "react";
 
+
 // retreive current date
 let date = new Date();
 let day = date.getDate();
@@ -15,19 +16,18 @@ const Analytics = () => {
 	const [data, setData] = useState({});
 	const [loading, setLoading] = useState(false);
 
-	const access_token =
-		"eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMzg5Q0QiLCJzdWIiOiI0M1BHRFYiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJ3aHIgd251dCB3cHJvIHdzbGUgd3dlaSB3c29jIHdzZXQgd2FjdCB3bG9jIiwiZXhwIjoxNjUyMTQ2MTc4LCJpYXQiOjE2NTE1NDEzNzh9.Hp0j00N2o-Et7NdRLtUdtyRc9e6A48HLc2wj_BUsUzY";
+	const access_token = process.env.REACT_APP_FITBIT_TOKEN
 
 	let activityUrl = `https://api.fitbit.com/1/user/-/activities/date/${today}.json`;
 	let foodUrl = `https://api.fitbit.com/1/user/-/foods/log/caloriesIn/date/${today}/1d.json`;
 
-  function jsonFromResponse(response) {
-    console.log(response);
-    if (!response.ok) {
-      throw Error("Error");
-    }
-    return response.json();
-  }
+	function jsonFromResponse(response) {
+		console.log(response);
+		if (!response.ok) {
+			throw Error("Error");
+		}
+		return response.json();
+	}
 
 	const getWithAuth = {
 		method: "GET",
@@ -39,19 +39,16 @@ const Analytics = () => {
 		Promise.all([
 			fetch(activityUrl, getWithAuth).then(jsonFromResponse),
 			fetch(foodUrl, getWithAuth).then(jsonFromResponse),
-		]).then(([fitData, foodData]) => {
-      console.log({fitData, foodData})
-      setData({fitData, foodData})
-      setLoading({fitData, foodData})
-			const caloriesBurned = data.fitData?.summary?.caloriesOut
-			const caloriesEaten = data.foodData?.["foods-log-caloriesIn"][0]?.value
-			const calorieDeficit = 500
-			const CaloriesAvailable = caloriesBurned = caloriesEaten - calorieDeficit
-
-				}).catch((err ) => {
-					console.log("response error", err)
-				})	
-  }, [])
+		])
+			.then(([fitData, foodData]) => {
+				console.log({ fitData, foodData });
+				setData({ fitData, foodData });
+				setLoading({ fitData, foodData });
+			})
+			.catch((err) => {
+				console.log("response error", err);
+			});
+	}, []);
 	return (
 		<div className="min-h-screen flex flex-col text-white loggedIn">
 			<main className="container mx-auto px-6 pt-16 flex-1 text-center">
@@ -63,17 +60,23 @@ const Analytics = () => {
 				</h1>
 				<div className="text-lg md:text-2xl lg:3xl py-2 md:py-4 md:px-10 lg:py-6 lg:px-12 bg-green-900 bg-opacity-40 w-fit mx-auto mb-8 rounded-full">
 					<ul>
-            <li>Calories Burned: {data.fitData?.summary?.caloriesOut}</li>
-            <li>Calories Eaten: {data.foodData?.["foods-log-caloriesIn"][0]?.value}</li>
-            <li>Desired Daily Deficit: {500}</li>
-            <li><span className="text-yellow-400">Calories in your wallet:</span> {CaloriesAvailable}</li>
-            <li>BMR: {data.fitData?.summary?.caloriesBMR}</li>
-            <li>Floor Count: {data.fitData?.summary?.floors}</li>
-            <li>Step Count: {data.fitData?.summary?.steps}</li>
-            <li>Resting Heart Rate: {data.fitData?.summary?.restingHeartRate}</li>
-            
-            
-          </ul>
+						<li>Calories Burned: {data.fitData?.summary?.caloriesOut}</li>
+						<li>
+							Calories Eaten:{" "}
+							{data.foodData?.["foods-log-caloriesIn"][0]?.value}
+						</li>
+						<li>Desired Daily Deficit: {500}</li>
+						<li>
+							<span className="text-yellow-400">Calories in your wallet:</span>{" "}
+							{/* {data.fitData?.summary?.caloriesOut} {-} {data.foodData?.["foods-log-caloriesIn"][0]?.value} {-} {data.foodData?.["foods-log-caloriesIn"][0]?.value} */}
+						</li>
+						<li>BMR: {data.fitData?.summary?.caloriesBMR}</li>
+						<li>Floor Count: {data.fitData?.summary?.floors}</li>
+						<li>Step Count: {data.fitData?.summary?.steps}</li>
+						<li>
+							Resting Heart Rate: {data.fitData?.summary?.restingHeartRate}
+						</li>
+					</ul>
 				</div>
 
 				<p className="text-base md:text-lg lg:text-2xl mb-8 bg-green-900 text- bg-opacity-60 w-fit mx-auto rounded-full">
