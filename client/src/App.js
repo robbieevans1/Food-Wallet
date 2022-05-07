@@ -58,6 +58,7 @@ function App() {
               <Route exact path="/stats" component={Stats} />
               <Route exact path="/merch" component={Merch} />
               <Route exact path="/about" component={About} />
+              <Route exact path="/faq" component={Faq} />
               <Route exact path="/products/:id" component={Detail} />
               <Route component={NoMatch} />
             </Switch>
