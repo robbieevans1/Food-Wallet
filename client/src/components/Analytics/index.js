@@ -43,7 +43,10 @@ const Analytics = () => {
       console.log({fitData, foodData})
       setData({fitData, foodData})
       setLoading({fitData, foodData})
-
+			const caloriesBurned = data.fitData?.summary?.caloriesOut
+			const caloriesEaten = data.foodData?.["foods-log-caloriesIn"][0]?.value
+			const calorieDeficit = 500
+			const CaloriesAvailable = caloriesBurned = caloriesEaten - calorieDeficit
 
 				}).catch((err ) => {
 					console.log("response error", err)
@@ -61,9 +64,9 @@ const Analytics = () => {
 				<div className="text-lg md:text-2xl lg:3xl py-2 md:py-4 md:px-10 lg:py-6 lg:px-12 bg-green-900 bg-opacity-40 w-fit mx-auto mb-8 rounded-full">
 					<ul>
             <li>Calories Burned: {data.fitData?.summary?.caloriesOut}</li>
-            <li>Calories Eaten: {}</li>
+            <li>Calories Eaten: {data.foodData?.["foods-log-caloriesIn"][0]?.value}</li>
             <li>Desired Daily Deficit: {500}</li>
-            <li><span className="text-yellow-400">Calories in your wallet:</span> {}</li>
+            <li><span className="text-yellow-400">Calories in your wallet:</span> {CaloriesAvailable}</li>
             <li>BMR: {data.fitData?.summary?.caloriesBMR}</li>
             <li>Floor Count: {data.fitData?.summary?.floors}</li>
             <li>Step Count: {data.fitData?.summary?.steps}</li>
