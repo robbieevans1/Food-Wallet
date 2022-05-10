@@ -30,19 +30,19 @@ const CountrolsInputs = ({
 				<input
 					type="number"
 					placeholder="ounces"
-					// value={calories}
-					// onChange={(e) => setCalories(e.target.value)}
+					value={ounces}
+					onChange={(e) => setOunces(e.target.value)}
 				/>
 				<input
 					type="number"
 					placeholder="protein"
-					// value={calories}
-					// onChange={(e) => setCalories(e.target.value)}
+					value={protein}
+					// onChange={(e) => setProtein(e.target.value)}
 				/>
 				<input
 					type="number"
 					placeholder="fiber"
-					// value={calories}
+					value={fiber}
 					// onChange={(e) => setCalories(e.target.value)}
 				/>
 

@@ -11,6 +11,9 @@ const FoodData = () => {
   const [meals, setMeals] = useState([]);
 	const [mealName, setMealName] = useState("");
 	const [calories, setCalories] = useState(0);
+	const [protein, setProtein] = useState(0);
+	const [ounces, setOunces] = useState(0);
+	const [fiber, setFiber] = useState(0);
 	const [openModal, setOpenModal] = useState(false);
 	const [selectedFilter, setSelectedFilter] = useState("");
 
@@ -20,12 +23,15 @@ const FoodData = () => {
 		const meal = {
 			mealName,
 			calories,
+			protein,
+			ounces,
+			fiber,
 			id: Math.floor(Math.random() * 1000),
 		};
 
 		const newMeals = oldMeals.concat(meal);
 
-		if (calories <= 0 || mealName === "") {
+		if (calories <= 0 || protein <=0 || fiber <=0 ||   mealName === "") {
 			setOpenModal(true);
 		} else {
 			setMeals(newMeals);
@@ -33,6 +39,9 @@ const FoodData = () => {
 
 		setMealName("");
 		setCalories(0);
+		setProtein(0);
+		setOunces(0);
+		setFiber(0);
 	};
 
 	const deleteMealHandler = (id) => {
@@ -70,6 +79,9 @@ const FoodData = () => {
       	addMealsHandler={addMealsHandler}
 				mealName={mealName}
 				calories={calories}
+				protein={protein}
+				ounces={ounces}
+				fiber={fiber}
 				setMealName={setMealName}
 				setCalories={setCalories}
         />
