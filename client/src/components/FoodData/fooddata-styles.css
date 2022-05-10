@@ -81,7 +81,6 @@ span {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
 }
 
 .app__meals__container__wrapper {
@@ -92,6 +91,8 @@ span {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  position: relative;
+
 }
 
 .app__meals__container__wrapper__inner {

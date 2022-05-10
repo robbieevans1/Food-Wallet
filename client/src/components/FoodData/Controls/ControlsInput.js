@@ -17,7 +17,7 @@ const CountrolsInputs = ({
 			<div className="app__controls__inputs">
 				<input
 					type="text"
-					placeholder="meal"
+					placeholder="food"
 					value={mealName}
 					onChange={(e) => setMealName(e.target.value)}
 				/>
@@ -30,19 +30,19 @@ const CountrolsInputs = ({
 				<input
 					type="number"
 					placeholder="ounces"
-					value={ounces}
+					// value={calories}
 					// onChange={(e) => setCalories(e.target.value)}
 				/>
 				<input
 					type="number"
 					placeholder="protein"
-					value={protein}
+					// value={calories}
 					// onChange={(e) => setCalories(e.target.value)}
 				/>
 				<input
 					type="number"
 					placeholder="fiber"
-					value={fiber}
+					// value={calories}
 					// onChange={(e) => setCalories(e.target.value)}
 				/>
 

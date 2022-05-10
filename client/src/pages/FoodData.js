@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import ControlsCounter from "../components/FoodData/Controls/ControlsCounter";
 import ControlsDelete from "../components/FoodData/Controls/ControlsDelete";
 import CountrolsInputs from "../components/FoodData/Controls/ControlsInput";
-import MealsFilter from "../components/FoodData/MealsFilter";
 import MealList from "../components/FoodData/MealsList";
 import Modal from "../components/FoodData/Modal";
 
