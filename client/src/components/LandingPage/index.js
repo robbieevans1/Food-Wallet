@@ -12,10 +12,15 @@ const LandingPage = () => {
 					Food Wallet
 				</h1>
 				<div className="text-lg md:text-2xl lg:3xl py-2 md:py-4 md:px-10 lg:py-6 lg:px-12 bg-green-900 bg-opacity-40 w-fit mx-auto mb-8 rounded-full">
-          Food and Fitness Data
+				Do you really know how many calories you need to meet your fitness goals?
+
+        </div>
+				<div className="text-lg md:text-2xl lg:3xl py-2 md:py-4 md:px-10 lg:py-6 lg:px-12 bg-green-900 bg-opacity-40 w-fit mx-auto mb-8 rounded-full">
+				What if you could value your food in the same way as your investments?
+
         </div>
 
-        <p className="text-base md:text-lg lg:text-2xl mb-8 bg-green-900 text- bg-opacity-60 w-fit mx-auto rounded-full">Reach your fitness goals quicker with real time data and analytics</p>
+        <p className="text-base md:text-lg lg:text-2xl mb-8 bg-green-900 text- bg-opacity-60 w-fit mx-auto rounded-full">Reach your fitness goals quicker with real time quantitative data</p>
 			</main>
 			<footer className="container mx-auto p-6">
 				<div className="flex flex-col md:flex-row items-center justify-between">
