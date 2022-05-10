@@ -84,6 +84,9 @@ const FoodData = () => {
 				fiber={fiber}
 				setMealName={setMealName}
 				setCalories={setCalories}
+				setProtein={setProtein}
+				setOunces={setOunces}
+				setFiber={setFiber}
         />
 
 			<div>

@@ -5,7 +5,13 @@ const CountrolsInputs = ({
 	addMealsHandler,
 	mealName,
 	calories,
+  ounces,
+  protein,
+  fiber,
 	setCalories,
+  setOunces,
+  setProtein,
+  setFiber,
 	setMealName,
 }) => {
 	const onAddMealsClick = () => {
@@ -37,13 +43,13 @@ const CountrolsInputs = ({
 					type="number"
 					placeholder="protein"
 					value={protein}
-					// onChange={(e) => setProtein(e.target.value)}
+					onChange={(e) => setProtein(e.target.value)}
 				/>
 				<input
 					type="number"
 					placeholder="fiber"
 					value={fiber}
-					// onChange={(e) => setCalories(e.target.value)}
+					onChange={(e) => setFiber(e.target.value)}
 				/>
 
 				<button onClick={onAddMealsClick}>Add Food</button>
