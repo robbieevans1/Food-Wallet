@@ -1,4 +1,5 @@
 import React from "react";
+import ControlsCounter from "../components/FoodData/Controls/ControlsCounter";
 import MealsFilter from "../components/FoodData/MealsFilter";
 import MealList from "../components/FoodData/MealsList";
 import Modal from "../components/FoodData/Modal";
@@ -6,7 +7,8 @@ import Modal from "../components/FoodData/Modal";
 const FoodData = () => {
 	return (
 		<div>
-			{openModal ? <AppModal setOpenModal={setOpenModal} /> : ""}
+      <ControlsCounter total={total}/>
+			{openModal ? <Modal setOpenModal={setOpenModal} /> : ""}
 
 			<div>
 				<MealList meals={meals} deleteMealHandler={deleteMealHandler} />
