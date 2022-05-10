@@ -35,6 +35,7 @@ const Analytics = () => {
 		method: "GET",
 		headers: { Authorization: "Bearer " + access_token },
 	};
+	console.log(getWithAuth)
 
 	useEffect(() => {
 		setLoading(true);
