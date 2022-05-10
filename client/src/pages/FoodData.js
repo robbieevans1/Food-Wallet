@@ -7,8 +7,9 @@ import Modal from "../components/FoodData/Modal";
 const FoodData = () => {
 	return (
 		<div>
-      <ControlsCounter total={total}/>
+			<ControlsCounter total={total} />
 			{openModal ? <Modal setOpenModal={setOpenModal} /> : ""}
+			<ControlsCounter total={total} />
 
 			<div>
 				<MealList meals={meals} deleteMealHandler={deleteMealHandler} />
