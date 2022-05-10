@@ -12,6 +12,7 @@ if (month < 10) month = "0" + month;
 if (day < 10) day = "0" + day;
 let today = year + "-" + month + "-" + day;
 
+
 const Analytics = () => {
 	const [data, setData] = useState({});
 	const [loading, setLoading] = useState(false);
@@ -28,6 +29,8 @@ const Analytics = () => {
 		}
 		return response.json();
 	}
+
+
 
 	const getWithAuth = {
 		method: "GET",
@@ -50,6 +53,12 @@ const Analytics = () => {
 				console.log("response error", err);
 			});
 	}, []);
+
+	const caloriesAvailable = (caloriesOut, caloriesIn) => {
+		if (!caloriesOut || !caloriesIn) return 0
+		return caloriesOut - caloriesIn - 500
+	}
+	
 	return (
 		<div className="min-h-screen flex flex-col text-white loggedIn">
 			<main className="container mx-auto px-6 pt-16 flex-1 text-center">
@@ -69,7 +78,7 @@ const Analytics = () => {
 						<li>Desired Daily Deficit: {500}</li>
 						<li>
 							<span className="text-yellow-400">Calories in your wallet:</span>{" "}
-							{/* {data.fitData?.summary?.caloriesOut} {-} {data.foodData?.["foods-log-caloriesIn"][0]?.value} {-} {data.foodData?.["foods-log-caloriesIn"][0]?.value} */}
+							{caloriesAvailable(data?.fitData?.summary?.caloriesOut, data?.foodData?.["foods-log-caloriesIn"][0]?.value)}
 						</li>
 						<li>BMR: {data.fitData?.summary?.caloriesBMR}</li>
 						<li>Floor Count: {data.fitData?.summary?.floors}</li>

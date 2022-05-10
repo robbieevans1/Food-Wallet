@@ -4,9 +4,15 @@ import styled from 'styled-components'
 import {IconContext} from 'react-icons'
 import {FiPlus, FiMinus} from 'react-icons/fi'
 
+const Accordion = styled.div`
+
+`
+
 const Faqs = () => {
   return (
-    <div>Faqs</div>
+    <Accordion>
+      
+    </Accordion>
   )
 }
 
