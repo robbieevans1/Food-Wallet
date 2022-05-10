@@ -15,6 +15,11 @@ function Nav() {
             </Link>
           </li>
           <li className="mx-1 pt-6 pl-3">
+            <Link to="/fooddata">
+              Food Data
+            </Link>
+          </li>
+          <li className="mx-1 pt-6 pl-3">
             <Link to="/merch">
               Merch
             </Link>

@@ -22,6 +22,7 @@ import Stats from './pages/Stats';
 import Merch from './pages/Merch';
 import About from './pages/About';
 import Faq from './pages/Faq';
+import FoodData from './pages/FoodData';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -55,6 +56,7 @@ function App() {
               <Route exact path="/signup" component={Signup} />
               <Route exact path="/success" component={Success} />
               <Route exact path="/orderHistory" component={OrderHistory} />
+              <Route exact path="/fooddata" component={FoodData} />
               <Route exact path="/stats" component={Stats} />
               <Route exact path="/merch" component={Merch} />
               <Route exact path="/about" component={About} />

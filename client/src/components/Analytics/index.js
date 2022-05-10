@@ -59,6 +59,7 @@ const Analytics = () => {
 		return caloriesOut - caloriesIn - 500
 	}
 	
+	
 	return (
 		<div className="min-h-screen flex flex-col text-white loggedIn">
 			<main className="container mx-auto px-6 pt-16 flex-1 text-center">
