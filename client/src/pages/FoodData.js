@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import ControlsCounter from "../components/FoodData/Controls/ControlsCounter";
 import ControlsDelete from "../components/FoodData/Controls/ControlsDelete";
-import CountrolsInputs from "../components/FoodData/Controls/ControlsInput";
+import ControlsInputs from "../components/FoodData/Controls/ControlsInput";
 import MealList from "../components/FoodData/MealsList";
 import Modal from "../components/FoodData/Modal";
 
@@ -75,7 +75,7 @@ const FoodData = () => {
 			<ControlsCounter total={total} />
 			{openModal ? <Modal setOpenModal={setOpenModal} /> : ""}
 			<ControlsDelete  deleteAllMeals={deleteAllMeals}/>
-      <CountrolsInputs
+      <ControlsInputs
       	addMealsHandler={addMealsHandler}
 				mealName={mealName}
 				calories={calories}
