@@ -17,7 +17,8 @@ const Analytics = () => {
 	const [data, setData] = useState({});
 	const [loading, setLoading] = useState(false);
 
-	const access_token = process.env.REACT_APP_FITBIT_TOKEN
+	const access_token = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMzg5Q0QiLCJzdWIiOiI0M1BHRFYiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJ3aHIgd251dCB3cHJvIHdzbGUgd3dlaSB3c29jIHdzZXQgd2FjdCB3bG9jIiwiZXhwIjoxNjU0NzQwNDEzLCJpYXQiOjE2NTIxNDg0MTN9.JMwk2DMvltUJmNDli-mAfnkhhXOLIQyJFgYhZQRwvwg"
+	// const access_token = process.env.REACT_APP_FITBIT_TOKEN
 
 	let activityUrl = `https://api.fitbit.com/1/user/-/activities/date/${today}.json`;
 	let foodUrl = `https://api.fitbit.com/1/user/-/foods/log/caloriesIn/date/${today}/1d.json`;
