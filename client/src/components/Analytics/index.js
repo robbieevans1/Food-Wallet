@@ -31,8 +31,6 @@ const Analytics = () => {
 		return response.json();
 	}
 
-
-
 	const getWithAuth = {
 		method: "GET",
 		headers: { Authorization: "Bearer " + access_token },
