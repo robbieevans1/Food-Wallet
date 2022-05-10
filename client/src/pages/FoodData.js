@@ -9,10 +9,10 @@ import Modal from "../components/FoodData/Modal";
 const FoodData = () => {
 	const [meals, setMeals] = useState([]);
 	const [mealName, setMealName] = useState("");
-	const [calories, setCalories] = useState(0);
-	const [protein, setProtein] = useState(0);
-	const [ounces, setOunces] = useState(0);
-	const [fiber, setFiber] = useState(0);
+	const [calories, setCalories] = useState();
+	const [protein, setProtein] = useState();
+	const [ounces, setOunces] = useState();
+	const [fiber, setFiber] = useState();
 	const [openModal, setOpenModal] = useState(false);
 
 	const addMealsHandler = () => {
@@ -41,10 +41,10 @@ const FoodData = () => {
 		}
 
 		setMealName("");
-		setCalories(0);
-		setProtein(0);
-		setOunces(0);
-		setFiber(0);
+		setCalories("");
+		setProtein("");
+		setOunces("");
+		setFiber("");
 	};
 
 	const deleteMealHandler = (id) => {

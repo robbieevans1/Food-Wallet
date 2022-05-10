@@ -87,6 +87,7 @@ span {
   height: auto;
   width: 100%;
   padding: 16px;
+  top: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -159,10 +160,3 @@ span {
 
 }
 
-.list {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-}
