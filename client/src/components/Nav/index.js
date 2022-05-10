@@ -24,11 +24,11 @@ function Nav() {
               Merch
             </Link>
           </li>
-          <li className="mx-1 pt-6 pl-3">
+          {/* <li className="mx-1 pt-6 pl-3">
             <Link to="/faq">
               FAQ
             </Link>
-          </li>
+          </li> */}
           <li className="mx-1 pt-6 pl-3">
             {/* this is not using the Link component to logout or user and then refresh the application to the start */}
             <a href="/" onClick={() => Auth.logout()}>
@@ -50,11 +50,11 @@ function Nav() {
               Login
             </Link>
           </li>
-          <li className="mx-1 pt-6">
+          {/* <li className="mx-1 pt-6">
             <Link to="/faq">
               FAQ
             </Link>
-          </li>
+          </li> */}
         </ul>
       );
     }

@@ -26,7 +26,7 @@ const LandingPage = () => {
 				<div className="flex flex-col md:flex-row items-center justify-between">
 					<p className="mb-4 md:mb-0 md:text-xl">Made with 💖 by Robbie </p>
 
-					<div className="flex -mx-6">
+					{/* <div className="flex -mx-6">
 						<a href="#" className=" mx-3 hover:opacity-80 duration-150">
 							About us
 						</a>{" "}
@@ -37,8 +37,8 @@ const LandingPage = () => {
 						|
 						<a href="#" className="mx-3 hover:opacity-80 duration-150">
 							Contact
-						</a>
-					</div>
+						</a> */}
+					{/* </div> */}
 				</div>
 			</footer>
 		</div>
