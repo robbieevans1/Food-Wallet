@@ -20,7 +20,7 @@ const LandingPage = () => {
 
         </div>
 
-        <p className="text-base md:text-lg lg:text-2xl mb-8 bg-green-900 text- bg-opacity-60 w-fit mx-auto rounded-full">Reach your fitness goals quicker with real time quantitative data</p>
+        <p className="text-base md:text-lg lg:text-2xl mb-8 bg-green-900 text- bg-opacity-60 w-fit mx-auto rounded-full">Reach your fitness goals quicker with real time quantitative data.</p>
 			</main>
 			<footer className="container mx-auto p-6">
 				<div className="flex flex-col md:flex-row items-center justify-between">
