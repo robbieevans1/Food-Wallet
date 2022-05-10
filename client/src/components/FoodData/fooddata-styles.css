@@ -158,3 +158,11 @@ span {
   border: 1px solid black;
 
 }
+
+.list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}

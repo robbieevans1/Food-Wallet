@@ -15,8 +15,6 @@ const FoodData = () => {
 	const [ounces, setOunces] = useState(0);
 	const [fiber, setFiber] = useState(0);
 	const [openModal, setOpenModal] = useState(false);
-	const [selectedFilter, setSelectedFilter] = useState("");
-
 
   const addMealsHandler = () => {
 		const oldMeals = [...meals];
@@ -31,7 +29,7 @@ const FoodData = () => {
 
 		const newMeals = oldMeals.concat(meal);
 
-		if (calories <= 0 || protein <=0 || fiber <=0 ||   mealName === "") {
+		if (calories <= 0 || protein <0 || ounces<=0 || fiber <0 ||   mealName === "") {
 			setOpenModal(true);
 		} else {
 			setMeals(newMeals);
@@ -58,21 +56,23 @@ const FoodData = () => {
   const total = meals
   .map((meal) => meal.calories)
   .reduce((acc, value) => acc + +value, 0);
+  
+  
+	const totalOunces = meals
+  .map((meal) => meal.ounces)
+  .reduce((acc, value) => acc + +value, 0);
+  
+	const totalProtein = meals
+  .map((meal) => meal.protein)
+  .reduce((acc, value) => acc + +value, 0);
 
-  useEffect(() => {
-    const oldState = [...meals]
-    if(selectedFilter === "Ascending"){
-      const ascendingMeals = oldState.sort((a,b) => a.calories = b.calories)
-      setMeals(ascendingMeals)
-    } else if(selectedFilter === "Descending") {
-      const descendingMeals = oldState.sort((a,b) => b.calories - a.calories)
-      setMeals(descendingMeals)
-    }
-  }, [selectedFilter])
+	const totalFiber = meals
+  .map((meal) => meal.fiber)
+  .reduce((acc, value) => acc + +value, 0);
 
 	return (
 		<div className="fd">
-			<ControlsCounter total={total} />
+			<ControlsCounter total={total} totalOunces={totalOunces} totalProtein={totalProtein} totalFiber={totalFiber}/>
 			{openModal ? <Modal setOpenModal={setOpenModal} /> : ""}
 			<ControlsDelete  deleteAllMeals={deleteAllMeals}/>
       <ControlsInputs
