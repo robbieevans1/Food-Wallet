@@ -6,9 +6,8 @@ import ControlsInputs from "../components/FoodData/Controls/ControlsInput";
 import MealList from "../components/FoodData/MealsList";
 import Modal from "../components/FoodData/Modal";
 
-
 const FoodData = () => {
-  const [meals, setMeals] = useState([]);
+	const [meals, setMeals] = useState([]);
 	const [mealName, setMealName] = useState("");
 	const [calories, setCalories] = useState(0);
 	const [protein, setProtein] = useState(0);
@@ -16,7 +15,7 @@ const FoodData = () => {
 	const [fiber, setFiber] = useState(0);
 	const [openModal, setOpenModal] = useState(false);
 
-  const addMealsHandler = () => {
+	const addMealsHandler = () => {
 		const oldMeals = [...meals];
 		const meal = {
 			mealName,
@@ -29,7 +28,13 @@ const FoodData = () => {
 
 		const newMeals = oldMeals.concat(meal);
 
-		if (calories <= 0 || protein <0 || ounces<=0 || fiber <0 ||   mealName === "") {
+		if (
+			calories <= 0 ||
+			protein < 0 ||
+			ounces <= 0 ||
+			fiber < 0 ||
+			mealName === ""
+		) {
 			setOpenModal(true);
 		} else {
 			setMeals(newMeals);
@@ -49,34 +54,48 @@ const FoodData = () => {
 		setMeals(newMeals);
 	};
 
-  const deleteAllMeals = () => {
+	const deleteAllMeals = () => {
 		setMeals([]);
 	};
 
-  const total = meals
-  .map((meal) => meal.calories)
-  .reduce((acc, value) => acc + +value, 0);
-  
-  
+	const total = meals
+		.map((meal) => meal.calories)
+		.reduce((acc, value) => acc + +value, 0);
+
 	const totalOunces = meals
-  .map((meal) => meal.ounces)
-  .reduce((acc, value) => acc + +value, 0);
-  
+		.map((meal) => meal.ounces)
+		.reduce((acc, value) => acc + +value, 0);
+
 	const totalProtein = meals
-  .map((meal) => meal.protein)
-  .reduce((acc, value) => acc + +value, 0);
+		.map((meal) => meal.protein)
+		.reduce((acc, value) => acc + +value, 0);
 
 	const totalFiber = meals
-  .map((meal) => meal.fiber)
-  .reduce((acc, value) => acc + +value, 0);
+		.map((meal) => meal.fiber)
+		.reduce((acc, value) => acc + +value, 0);
+
+	const coRatio = Math.round(total / totalOunces * 100) / 100
+	
+	
+	const cpRatio = Math.round(total / totalProtein * 100) / 100
+	
+	const cfRatio = Math.round(total / totalFiber * 100) / 100
 
 	return (
 		<div className="fd">
-			<ControlsCounter total={total} totalOunces={totalOunces} totalProtein={totalProtein} totalFiber={totalFiber}/>
+			<ControlsCounter
+				total={total}
+				totalOunces={totalOunces}
+				totalProtein={totalProtein}
+				totalFiber={totalFiber}
+				coRatio={coRatio}
+				cpRatio={cpRatio}
+				cfRatio={cfRatio}
+			/>
 			{openModal ? <Modal setOpenModal={setOpenModal} /> : ""}
-			<ControlsDelete  deleteAllMeals={deleteAllMeals}/>
-      <ControlsInputs
-      	addMealsHandler={addMealsHandler}
+			<ControlsDelete deleteAllMeals={deleteAllMeals} />
+			<ControlsInputs
+				addMealsHandler={addMealsHandler}
 				mealName={mealName}
 				calories={calories}
 				protein={protein}
@@ -87,7 +106,7 @@ const FoodData = () => {
 				setProtein={setProtein}
 				setOunces={setOunces}
 				setFiber={setFiber}
-        />
+			/>
 
 			<div>
 				<MealList meals={meals} deleteMealHandler={deleteMealHandler} />
