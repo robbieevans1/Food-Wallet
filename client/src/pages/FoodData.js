@@ -63,7 +63,7 @@ const FoodData = () => {
   }, [selectedFilter])
 
 	return (
-		<div>
+		<div className="fd">
 			<ControlsCounter total={total} />
 			{openModal ? <Modal setOpenModal={setOpenModal} /> : ""}
 			<ControlsDelete  deleteAllMeals={deleteAllMeals}/>

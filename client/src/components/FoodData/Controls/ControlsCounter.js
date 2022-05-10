@@ -1,4 +1,5 @@
 import React from 'react'
+import '../fooddata-styles.css'
 
 const ControlsCounter = ({total}) => {
   return (
