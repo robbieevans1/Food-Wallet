@@ -1,4 +1,6 @@
 import React from "react";
+import '../fooddata-styles.css'
+
 
 const ControlsDelete = ({ deleteAllMeals }) => {
 	return (

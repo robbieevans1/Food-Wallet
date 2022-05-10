@@ -1,4 +1,6 @@
 import React from 'react'
+import '../fooddata-styles.css'
+
 
 const Modal = ({setOpenModal}) => {
   return (

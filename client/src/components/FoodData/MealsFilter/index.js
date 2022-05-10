@@ -1,4 +1,6 @@
 import React from "react";
+import '../fooddata-styles.css'
+
 
 const MealsFilter = (setSelectedFilter, selectedFilter) => {
 	return (

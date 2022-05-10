@@ -77,10 +77,10 @@ const FoodData = () => {
 
 			<div>
 				<MealList meals={meals} deleteMealHandler={deleteMealHandler} />
-				<MealsFilter
+				{/* <MealsFilter
 					selectedFilter={selectedFilter}
 					setSelectedFilter={setSelectedFilter}
-				/>
+				/> */}
 			</div>
 		</div>
 	);
