@@ -33,7 +33,7 @@ const Analytics = () => {
 
 	const getWithAuth = {
 		method: "GET",
-		headers: { Authorization: "Bearer " + access_token },
+		headers: { Authorization: "Bearer " + "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMzg5Q0QiLCJzdWIiOiI0M1BHRFYiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJ3aHIgd251dCB3cHJvIHdzbGUgd3dlaSB3c29jIHdzZXQgd2FjdCB3bG9jIiwiZXhwIjoxNjU0NzQwNDEzLCJpYXQiOjE2NTIxNDg0MTN9.JMwk2DMvltUJmNDli-mAfnkhhXOLIQyJFgYhZQRwvwg" },
 	};
 	console.log(getWithAuth)
 
