@@ -5,7 +5,7 @@
 ### 
 
 ## Project Description
-FoodWallet is a web application that gives you timely information on how you can meet your fitness goals. We also offer a way to measure food relatively to other food.
+FoodWallet is a web application that gives you timely information on how you can meet your fitness goals. We also offer a way to measure food relative to other food.
 
 ## Table of Contents:
 - [Installation Instructions](#installation)
