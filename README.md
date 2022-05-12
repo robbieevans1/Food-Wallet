@@ -7,6 +7,13 @@
 ## Project Description
 FoodWallet is a web application that gives you timely information on how you can meet your fitness goals. We also offer a way to measure food relatively to other food.
 
+## Deployment
+ https://foodwallet.herokuapp.com/
+ 
+ ## Screenshot
+
+<img width="1435" alt="Screen Shot 2022-05-11 at 8 59 26 PM" src="https://user-images.githubusercontent.com/80990468/167971854-d9171893-b298-47bf-81a4-d079ef5aa214.png">
+
 ## Table of Contents:
 - [Installation Instructions](#installation)
 - [Usage Guidelines](#usage)
